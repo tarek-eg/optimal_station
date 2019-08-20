@@ -4,13 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run format && npm run lint && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarekMostafaHr/optimal_station.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TarekMostafaHr/optimal_station.git#readme/issues"
+  },
+  "homepage": "https://github.com/TarekMostafaHr/optimal_station.git#readme",
   "keywords": [],
   "author": "Tarek Mostafa",
   "license": "MIT",
+  "files": [
+    "lib/**/**"
+  ],
   "devDependencies": {
+    "cross-env": "5.2.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "tslint": "5.18.0",
+    "tslint-config-prettier": "1.18.0",
     "typescript": "3.5.3"
   }
 }
