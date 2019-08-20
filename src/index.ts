@@ -19,7 +19,7 @@ const stationPower = (reach: number, distance: number): number => {
   return Math.pow(reach - distance, 2);
 };
 // [x,y,reach]
-type LinkStations = Array<[number, number, number]>;
+export type LinkStations = Array<[number, number, number]>;
 
 interface ISucessObj {
   x1: number;
@@ -33,7 +33,9 @@ const { log } = console;
 const successMsg = ({ x1, x2, y1, y2, power }: ISucessObj): void =>
   log(`Best link station for point ${x1},${y1} is ${x2},${y2} with power ${power}`);
 
-const errorMsg = ({ x1, y1 }: IDeviceLocation): void => log(`No link station within reach for point ${x1},${y1}`);
+const errorMsg = ({ x1, y1 }: IDeviceLocation): string => `No link station within reach for point ${x1},${y1}`;
+
+// const createObj = (x1: number, y1: number) => ({ x1, y1 });
 
 const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations) => {
   const optimalStation = stations.reduce(
@@ -58,7 +60,4 @@ const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations) 
 };
 
 // const stations: LinkStations = [[0, 0, 10], [20, 20, 5], [10, 0, 12]];
-
-// const createObj = (x1: number, y1: number) => ({ x1, y1 });
-
 export default getOptimalStation;
