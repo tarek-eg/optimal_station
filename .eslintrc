@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "@typescript-eslint/eslint-plugin"],
+  "rules": {
+    "no-restricted-properties": "off",
+    "import/no-unresolved": "off",
+    "no-unused-vars": "off"
+  }
+}

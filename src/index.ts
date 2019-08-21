@@ -46,7 +46,13 @@ const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations) 
         return acc;
       }
 
-      return { x1, y1, x2, y2, power };
+      return {
+        x1,
+        y1,
+        x2,
+        y2,
+        power,
+      };
     },
     {} as ISucessObj,
   );
