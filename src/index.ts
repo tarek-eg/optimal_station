@@ -28,16 +28,15 @@ interface ISucessObj {
   y2: number;
   power: number;
 }
-const { log } = console;
 
-const successMsg = ({ x1, x2, y1, y2, power }: ISucessObj): void =>
-  log(`Best link station for point ${x1},${y1} is ${x2},${y2} with power ${power}`);
+// const successMsg = ({ x1, x2, y1, y2, power }: ISucessObj): string =>
+//   `Best link station for point ${x1},${y1} is ${x2},${y2} with power ${power}`;
 
 const errorMsg = ({ x1, y1 }: IDeviceLocation): string => `No link station within reach for point ${x1},${y1}`;
 
 // const createObj = (x1: number, y1: number) => ({ x1, y1 });
 
-const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations) => {
+const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations): ISucessObj | string => {
   const optimalStation = stations.reduce(
     (acc, [x2, y2, reach]) => {
       const power = stationPower(reach, calcEuclideanDistance({ x1, y1 }, { x2, y2 }));
@@ -58,7 +57,6 @@ const getOptimalStation = ({ x1, y1 }: IDeviceLocation, stations: LinkStations) 
   );
 
   if (optimalStation.power > 0) {
-    successMsg(optimalStation);
     return optimalStation;
   }
 
