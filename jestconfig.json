@@ -4,5 +4,8 @@
   },
   "transformIgnorePatterns": ["/node_modules/(?!MODULE_NAME_HERE).+\\.js$"],
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "collectCoverage": true,
+  "coverageReporters": ["json", "html"],
+  "collectCoverageFrom": ["src/**/__tests__"]
 }
