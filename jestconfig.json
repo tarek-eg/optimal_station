@@ -1,7 +1,8 @@
 {
   "transform": {
-    "^.+\\.(t|j)sx?$": "ts-jest"
+    "^.+\\.(t|j)sx?$": "babel-jest"
   },
+  "transformIgnorePatterns": ["/node_modules/(?!MODULE_NAME_HERE).+\\.js$"],
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
 }
