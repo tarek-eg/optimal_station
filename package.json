@@ -15,7 +15,7 @@
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint \"src/**/*.ts\"",
-    "validate": "npm-run-all --parallel format lint test type-check",
+    "validate": "npm-run-all --parallel format lint test type-check build",
     "prebuild": "rimraf lib",
     "build": "npm-run-all build:*",
     "build:types": "tsc --emitDeclarationOnly --p tsconfig.build.json",
